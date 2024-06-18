@@ -1,0 +1,77 @@
+:root{
+  --circle-size1: 15vw;
+  --circle-size2: 8vw;
+  --circle-size3: 20vw;
+}
+
+.yellow-circle-hero {
+  border-radius: 100%;
+  filter: blur(35px);
+  z-index: 1;
+  width: var(--circle-size1);
+  height: var(--circle-size1);
+  background-image: linear-gradient(150deg, #e3d026 10%, #e32626 90%);
+  animation: aniRed 20s linear infinite;
+}
+
+.blue-circle-hero {
+  background-image: linear-gradient(150deg, #5ecfff 10%, #006ded 90%);
+  border-radius: 100%;
+  width: var(--circle-size3);
+  height: var(--circle-size3);
+  filter: blur(35px);
+  position: absolute;
+  z-index: 1;
+  animation: aniBlue 30s linear infinite;
+}
+
+.green-circle-hero{
+    background-image: linear-gradient(90deg, #d5a61a 10%, #10bf36 90%);
+    width: var(--circle-size2);
+    height: var(--circle-size2);
+    position: absolute;
+    border-radius: 100%;
+    z-index: 1;
+    filter: blur(35px);
+    animation: aniGreen 15s linear infinite;
+}
+
+@keyframes aniGreen {
+    0%{
+        transform: translate3d(100px,-50px,0px) scale(1);
+    } 50%{
+        transform: translate3d(120px,-150px,0px) scale(3);
+    } 100% {
+        transform: translate3d(100px,-50px,0px) scale(1);
+    }
+}
+
+@keyframes aniBlue {
+  0% {
+    transform: scale(1) translate3d(100px,150px,0px);
+  } 50% {
+    transform: scale(1.5) translate3d(120px,70px,0px);
+  } 100%{
+    transform: scale(1) translate3d(100px,150px,0px);
+  }
+}
+
+@keyframes aniRed {
+     25%{
+        transform: scale(1.4) translate3d(-100px,-50px,0px);
+     } 50%{
+        transform: scale(2) translate3d(-100px,-100px,0px);
+     } 75% {
+        transform: scale(1.4) translate3d(-50px,-50px,0px);
+     }
+}
+
+.err-page {
+  z-index: 0;
+}
+
+.err-page h1,
+h3,
+button {
+  z-index: 2;
+}
