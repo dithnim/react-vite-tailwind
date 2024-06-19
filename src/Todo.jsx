@@ -5,7 +5,6 @@ import Sidebar from "./components/Sidebar.jsx";
 const Todo = () => {
   return (
     <>
-      <TodoNavbar />
       <div className="body flex items-start justify-between">
         <Sidebar />
       </div>
