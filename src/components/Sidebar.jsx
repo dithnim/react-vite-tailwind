@@ -22,13 +22,13 @@ const Sidebar = () => {
   };
 
   if (isOpen) {
-    // alert("skjka");
-    document.getElementById("sidebar").classList.add('sidebar-close')
-    document.getElementById("sidebar").classList.remove("sidebar-open");
-  } else {
-    document.getElementById("sidebar").classList.add("sidebar-open");
-    document.getElementById("sidebar").classList.remove("sidebar-close");
-  }
+    document.getElementById("sidebar").classList.toggle("sidebar-close");
+    // document.getElementById("sidebar").classList.remove("sidebar-open");
+  } 
+  // else {
+  //   document.getElementById("sidebar").classList.add("sidebar-open");
+  //   document.getElementById("sidebar").classList.remove("sidebar-close");
+  // }
 
   return (
     <>
@@ -50,8 +50,9 @@ const Sidebar = () => {
 
           <div className="first-row-btns flex">
             <i class="bx bx-bell text-2xl cursor-pointer hover:bg-neutral-800 delay-75 w-8 h-8 flex justify-center rounded-full"></i>
-            <button onClick={toggleSidebar}>
-              <i class="bx bxs-grid text-2xl cursor-pointer ms-1 hover:bg-neutral-800 delay-75 w-8 h-8 flex justify-center rounded-full"></i>
+            <i class="bx bx-cog text-2xl cursor-pointer ms-1 hover:bg-neutral-800 delay-75 w-8 h-8 flex justify-center rounded-full"></i>
+            <button onClick={toggleSidebar} id="btn-menu">
+              <i class="bx bx-sidebar text-xl cursor-pointer bg-neutral-900 w-8 h-8 left-[300px] top-4 flex justify-center items-center rounded-full absolute hover:bg-white hover:text-black"></i>
             </button>
           </div>
         </div>
@@ -86,7 +87,9 @@ const Sidebar = () => {
           "Upcoming"
         )}
 
-        <div className="second-row flex items-center justify-between cursor-pointer mt-5 w-[95%] px-1 ps-2 py-2 rounded-md hover:bg-neutral-900">
+        <div className="w-[90%] bg-neutral-800 h-[1px] mt-4"></div>
+
+        <div className="second-row flex items-center justify-between cursor-pointer mt-2 w-[95%] px-1 ps-2 py-2 rounded-md hover:bg-neutral-900">
           <label htmlFor="addTask" className="font-bold text-lg cursor-pointer">
             # Tags & Filters
           </label>

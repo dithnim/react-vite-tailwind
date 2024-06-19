@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar.jsx";
 const Todo = () => {
   return (
     <>
-      <div className="body flex items-start justify-between">
+      <div className="body flex items-center">
         <Sidebar />
       </div>
     </>
