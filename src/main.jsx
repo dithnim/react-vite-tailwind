@@ -21,7 +21,6 @@ const router = createBrowserRouter([
   {
     path: "/todo",
     element: <Todo />,
-    errorElement: <Error />,
   },
 ]);
 

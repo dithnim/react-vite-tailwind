@@ -22,12 +22,12 @@ const Sidebar = () => {
   };
 
   if (isOpen) {
-    document.getElementById("sidebar").classList.toggle("sidebar-close");
-    // document.getElementById("sidebar").classList.remove("sidebar-open");
-  } 
+    document.getElementById("sidebar").classList.add("sidebar-close");
+    document.getElementById("sidebar").classList.remove("sidebar-open");
+  }
   // else {
-  //   document.getElementById("sidebar").classList.add("sidebar-open");
-  //   document.getElementById("sidebar").classList.remove("sidebar-close");
+  //   document.getElementById("sidebar").classList.remove("sidebar-open");
+  //   document.getElementById("sidebar").classList.add("sidebar-close");
   // }
 
   return (
@@ -113,7 +113,9 @@ const Sidebar = () => {
           "Green"
         )}
 
-        <div className="second-row flex items-center justify-between cursor-pointer mt-5 w-[95%] px-1 ps-2 py-2 rounded-md hover:bg-neutral-900">
+        <div className="w-[90%] bg-neutral-800 h-[1px] mt-4"></div>
+
+        <div className="second-row flex items-center justify-between cursor-pointer mt-2 w-[95%] px-1 ps-2 py-2 rounded-md hover:bg-neutral-900">
           <label htmlFor="addTask" className="font-bold text-lg cursor-pointer">
             # My projects
           </label>
