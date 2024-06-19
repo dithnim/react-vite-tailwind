@@ -1,0 +1,11 @@
+.sidebar-close {
+  left: -250px; 
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow: auto;
+}
+
+.sidebar-open{
+    left: 0;
+    transition: left 0.3s ease;
+}

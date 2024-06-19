@@ -1,6 +1,7 @@
 import React from "react";
 import proPic from "../assets/pro-pic.jpg";
 import { useState } from "react";
+import "./Sidebar.css";
 
 function Row(svg, text) {
   return (
@@ -20,9 +21,21 @@ const Sidebar = () => {
     setIsOpen(!isOpen);
   };
 
+  if (isOpen) {
+    // alert("skjka");
+    document.getElementById("sidebar").classList.add('sidebar-close')
+    document.getElementById("sidebar").classList.remove("sidebar-open");
+  } else {
+    document.getElementById("sidebar").classList.add("sidebar-open");
+    document.getElementById("sidebar").classList.remove("sidebar-close");
+  }
+
   return (
     <>
-      <div className="sidebar bg-neutral-950 flex flex-col items-center w-72 absolute top-0 h-screen">
+      <div
+        className="sidebar-open bg-neutral-950 flex flex-col items-center w-72 absolute top-0 h-screen"
+        id="sidebar"
+      >
         <div className="first-row flex justify-between mt-3 w-full h-10 items-center px-3">
           <div className="btn-profile flex items-center cursor-pointer hover:bg-neutral-900 delay-75 h-9 rounded-md p-1">
             <img src={proPic} alt="ProPic" className="w-7 h-7 rounded-full" />
