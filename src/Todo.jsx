@@ -6,10 +6,10 @@ import bodySvg from "./assets/body.svg";
 const Todo = () => {
   return (
     <div className="todo-body flex">
-      <div className="flex">
+      <div className="w-[60%] h-screen">
         <Sidebar />
       </div>
-      <div className="body flex items-center justify-center bg-slate-100 w-[63%]">
+      <div className="body flex items-center justify-center bg-slate-700 w-full h-screen ms-auto">
         <p>dhfsjdfhj</p>
       </div>
     </div>
