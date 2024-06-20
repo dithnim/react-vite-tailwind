@@ -94,7 +94,7 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="btn-login font-semibold bg-white mt-10 px-20 py-2 rounded-lg w-full"
+                className="btn-login font-semibold bg-white mt-10 px-20 py-2 rounded-lg w-full text-black"
               >
                 Lessgo
               </button>

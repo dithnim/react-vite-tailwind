@@ -33,7 +33,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className="sidebar-open bg-neutral-950 flex flex-col items-center w-72 absolute top-0 h-screen"
+        className="sidebar bg-neutral-950 flex flex-col items-center w-72 absolute top-0 h-screen"
         id="sidebar"
       >
         <div className="first-row flex justify-between mt-3 w-full h-10 items-center px-3">
