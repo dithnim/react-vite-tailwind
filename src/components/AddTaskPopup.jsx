@@ -1,6 +1,12 @@
 import React from "react";
 
 const AddTaskPopup = () => {
+  const toggleAddTask = () => {
+    document
+      .getElementById("add-task-popup")
+      .classList.toggle("add-task-popup-open");
+  };
+
   return (
     <div
       className="add-task-popup bg-neutral-900 absolute top-[30%] left-[25%] w-[60%] rounded-md p-2 px-4 shadow-xl flex flex-col"
@@ -15,7 +21,6 @@ const AddTaskPopup = () => {
         type="text"
         placeholder="Description"
         className="bg-transparent outline-0 font-semibold text-sm w-full mt-2"
-        style={{width:'200px'}}
       />
       <div className="add-task-btns mt-2">
         <button className="add-task-sub bg-transparent rounded-md px-2 border border-neutral-500">
@@ -46,6 +51,7 @@ const AddTaskPopup = () => {
           <button
             type="reset"
             className="bg-white text-black font-semibold px-2 rounded-md me-2"
+            onClick={toggleAddTask}
           >
             Cancel
           </button>
