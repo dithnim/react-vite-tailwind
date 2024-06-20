@@ -33,11 +33,11 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className="sidebar bg-neutral-950 flex flex-col items-center w-72 absolute top-0 h-screen"
+        className="sidebar bg-neutral-950 flex flex-col items-center w-auto absolute top-0 h-screen"
         id="sidebar"
       >
         <div className="first-row flex justify-between mt-3 w-full h-10 items-center px-3">
-          <div className="btn-profile flex items-center cursor-pointer hover:bg-neutral-900 delay-75 h-9 rounded-md p-1">
+          <div className="btn-profile flex items-center cursor-pointer hover:bg-neutral-900 delay-75 h-9 rounded-md p-1 me-20">
             <img src={proPic} alt="ProPic" className="w-7 h-7 rounded-full" />
             <label
               htmlFor="proName"
