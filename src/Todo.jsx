@@ -30,6 +30,12 @@ const Todo = () => {
       .classList.toggle("add-task-popup-open");
   };
 
+  const toggleProfile = () => {
+    document
+      .getElementById("profile-popup")
+      .classList.toggle("profile-popup-open");
+  };
+
   return (
     <div className="todo-body flex w-screen" id="todo-body">
       {/* <Sidebar /> */}
@@ -39,7 +45,10 @@ const Todo = () => {
         id="sidebar"
       >
         <div className="first-row flex justify-between mt-3 w-full h-10 items-center px-3">
-          <div className="btn-profile flex items-center cursor-pointer hover:bg-neutral-900 delay-75 h-9 rounded-md p-1 me-20">
+          <div
+            className="btn-profile flex items-center cursor-pointer hover:bg-neutral-900 delay-75 h-9 rounded-md p-1 me-20"
+            onClick={toggleProfile}
+          >
             <img src={proPic} alt="ProPic" className="w-7 h-7 rounded-full" />
             <label
               htmlFor="proName"
@@ -48,6 +57,104 @@ const Todo = () => {
               KODI
             </label>
             <i class="bx bxs-chevron-down text-xl ms-2"></i>
+          </div>
+
+          <div
+            class="absolute profile-popup-close top-12 z-10 mt-2 w-56 divide-y divide-gray-800 rounded-md bg-neutral-900 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="menu-button"
+            tabindex="-1"
+            id="profile-popup"
+          >
+            <div class="py-1 " role="none">
+              <a
+                href="#"
+                class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-0"
+              >
+                <i class="bx bx-plus me-2 text-lg"></i>
+                Add a team
+              </a>
+              <a
+                href="#"
+                class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-1"
+              >
+                <i class="bx bx-cog me-2 text-lg"></i>
+                Settings
+              </a>
+            </div>
+
+            <div class="py-1" role="none">
+              <a
+                href="#"
+                class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-0"
+              >
+                <i class="bx bx-desktop me-2 text-lg"></i>
+                Activity log
+              </a>
+              <a
+                href="#"
+                class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-1"
+              >
+                <i class="bx bx-book me-2 text-lg"></i>
+                Resources
+              </a>
+            </div>
+
+            <div class="py-1" role="none">
+              <a
+                href="#"
+                class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-0"
+              >
+                <i class="bx bx-gift me-2 text-lg"></i>
+                What's new
+              </a>
+            </div>
+
+            <div class="py-1" role="none">
+              <a
+                href="#"
+                class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-0"
+              >
+                <i class="bx bx-star me-2 text-lg"></i>
+                Upgrade to pro
+              </a>
+            </div>
+
+            <div class="py-1" role="none">
+              <a
+                href="#"
+                class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
+                role="menuitem"
+                tabindex="-1"
+                id="menu-item-0"
+              >
+                <i class="bx bx-log-out me-2 text-lg"></i>
+                log out
+              </a>
+            </div>
+
+            <div class="py-1" role="none">
+              <p className="px-4 text-sm">v1.0 . changelog</p>
+            </div>
           </div>
 
           <div className="first-row-btns flex">

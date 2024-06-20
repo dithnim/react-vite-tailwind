@@ -17,24 +17,37 @@
   z-index: 0;
 }
 
-.add-task-popup{
+.add-task-popup {
   z-index: 2;
   display: none;
-  box-shadow: 2px 2px 30px rgba(255, 255, 255, 0.452);
+  box-shadow: 2px 2px 30px rgba(117, 116, 116, 0.452);
+  border: 1px solid rgba(128, 128, 128, 0.478);
 }
 
-.add-task-popup-open{
+.add-task-popup-open {
   display: block;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-.body-padding{
+.body-padding {
   padding-left: 275px;
   transition: all 0.5s ease;
 }
 
-@media (max-width: 800px){
-  .body-svg{
+.priority-popup-close,
+.date-popup-close,
+.profile-popup-close {
+  display: none;
+}
+
+.priority-popup-open,
+.date-popup-open,
+.profile-popup-open {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .body-svg {
     display: none;
   }
 }
