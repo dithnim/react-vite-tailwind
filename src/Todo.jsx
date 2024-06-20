@@ -18,9 +18,9 @@ function Row(svg, text) {
 }
 
 const Todo = () => {
-
   const toggleSidebar = () => {
     document.getElementById("sidebar").classList.toggle("sidebar-open");
+    document.getElementById("todo-body").classList.toggle("body-padding");
   };
 
   return (
@@ -122,8 +122,20 @@ const Todo = () => {
       </div>
 
       {/* Body element */}
-      <div className="body flex items-center justify-center bg-slate-700 h-screen ms-auto">
-        <p >dhfsjdfhj</p>
+      <div
+        className="body flex flex-col items-center justify-center h-screen ms-auto"
+        id="todo-body"
+      >
+        <img src={bodySvg} alt="" className="body-svg w-80" />
+        <div className="null-content mt-4 flex items-center flex-col">
+          <h2 className="text-lg font-semibold">
+            You're all done for today, KODI!
+          </h2>
+          <p className="text-sm mt-2">
+            Enjoy the rest of your day and Don't forget
+          </p>
+          <p className="text-sm">to keep your tasks organized</p>
+        </div>
       </div>
     </div>
   );

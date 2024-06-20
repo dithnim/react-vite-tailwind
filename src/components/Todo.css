@@ -9,10 +9,20 @@
 }
 
 .sidebar {
-  width: 38vw;
   z-index: 1000;
 }
 
 .body {
-  width: auto;
+  width: 100%;
+}
+
+.body-padding{
+  padding-left: 275px;
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 800px){
+  .body-svg{
+    display: none;
+  }
 }
