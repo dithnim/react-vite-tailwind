@@ -5,6 +5,7 @@ import bodySvg from "./assets/body.svg";
 import "./components/Todo.css";
 import proPic from "./assets/pro-pic.jpg";
 import { useState } from "react";
+import AddTaskPopup from "./components/AddTaskPopup.jsx";
 
 function Row(svg, text) {
   return (
@@ -147,46 +148,7 @@ const Todo = () => {
         </div>
       </div>
 
-      <div
-        className="add-task-popup bg-neutral-900 absolute top-[30%] left-[25%] w-[60%] rounded-md p-2 px-4 shadow-xl flex flex-col"
-        id="add-task-popup"
-      >
-        <input
-          type="text"
-          placeholder="Task name"
-          className="bg-transparent outline-0 font-semibold text-xl w-full"
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          className="bg-transparent outline-0 font-semibold text-sm w-full mt-2"
-        />
-        <div className="add-task-btns mt-2">
-          <button className="add-task-sub bg-transparent rounded-md px-2 border border-neutral-500">
-            <i class="bx bx-calendar-plus cursor-pointer"></i>
-            <label htmlFor="cal" className="ms-1 text-sm cursor-pointer">
-              Today
-            </label>
-          </button>
-          <button className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500">
-            <i class="bx bxs-flag-alt cursor-pointer"></i>
-            <label htmlFor="priority" className="ms-1 text-sm cursor-pointer">
-              Priority
-            </label>
-          </button>
-          <button className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500">
-            <i class="bx bx-alarm-add cursor-pointer"></i>
-            <label htmlFor="reminders" className="ms-1 text-sm cursor-pointer">
-              Reminders
-            </label>
-          </button>
-          <button className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500">
-            <i class="bx bx-dots-horizontal-rounded"></i>
-          </button>
-
-          <div className="w-[100%] bg-neutral-700 h-[1px] mt-4"></div>
-        </div>
-      </div>
+      <AddTaskPopup />
     </div>
   );
 };
