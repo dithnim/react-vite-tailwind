@@ -134,7 +134,7 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-0"
               >
-                <i class="bx bx-star me-2 text-lg"></i>
+                <i class="bx bx-star me-2 text-lg text-yellow-400"></i>
                 Upgrade to pro
               </a>
             </div>
