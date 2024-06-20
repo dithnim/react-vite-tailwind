@@ -9,5 +9,10 @@
 }
 
 .sidebar{
-  width: 45vh;
+  width: 20%;
+  z-index: 1000;
+}
+
+.body{
+  width: 80%;
 }

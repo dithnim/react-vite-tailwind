@@ -1,7 +1,7 @@
 import React from "react";
 import proPic from "../assets/pro-pic.jpg";
 import { useState } from "react";
-import "./Sidebar.css";
+
 
 function Row(svg, text) {
   return (
