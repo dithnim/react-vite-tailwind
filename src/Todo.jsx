@@ -23,6 +23,12 @@ const Todo = () => {
     document.getElementById("todo-body").classList.toggle("body-padding");
   };
 
+  const toggleAddTask = () => {
+    document
+      .getElementById("add-task-popup")
+      .classList.toggle("add-task-popup-open");
+  };
+
   return (
     <div className="todo-body flex w-screen" id="todo-body">
       {/* <Sidebar /> */}
@@ -52,7 +58,10 @@ const Todo = () => {
           </div>
         </div>
 
-        <div className="second-row flex items-center cursor-pointer my-5 w-[95%] px-1 ps-2 py-2 rounded-md hover:bg-neutral-900">
+        <div
+          className="second-row flex items-center cursor-pointer my-5 w-[95%] px-1 ps-2 py-2 rounded-md hover:bg-neutral-900"
+          onClick={toggleAddTask}
+        >
           <i class="bx bx-plus bg-red-500 me-2 p-1 rounded-full cursor-pointer"></i>
           <label htmlFor="addTask" className="text-red-600 cursor-pointer">
             Add task
@@ -134,7 +143,48 @@ const Todo = () => {
           <p className="text-sm mt-2">
             Enjoy the rest of your day and Don't forget
           </p>
-          <p className="text-sm">to keep your tasks organized</p>
+          <p className="text-sm">to keep your tasks organized : )</p>
+        </div>
+      </div>
+
+      <div
+        className="add-task-popup bg-neutral-900 absolute top-[30%] left-[25%] w-[60%] rounded-md p-2 px-4 shadow-xl flex flex-col"
+        id="add-task-popup"
+      >
+        <input
+          type="text"
+          placeholder="Task name"
+          className="bg-transparent outline-0 font-semibold text-xl w-full"
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          className="bg-transparent outline-0 font-semibold text-sm w-full mt-2"
+        />
+        <div className="add-task-btns mt-2">
+          <button className="add-task-sub bg-transparent rounded-md px-2 border border-neutral-500">
+            <i class="bx bx-calendar-plus cursor-pointer"></i>
+            <label htmlFor="cal" className="ms-1 text-sm cursor-pointer">
+              Today
+            </label>
+          </button>
+          <button className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500">
+            <i class="bx bxs-flag-alt cursor-pointer"></i>
+            <label htmlFor="priority" className="ms-1 text-sm cursor-pointer">
+              Priority
+            </label>
+          </button>
+          <button className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500">
+            <i class="bx bx-alarm-add cursor-pointer"></i>
+            <label htmlFor="reminders" className="ms-1 text-sm cursor-pointer">
+              Reminders
+            </label>
+          </button>
+          <button className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500">
+            <i class="bx bx-dots-horizontal-rounded"></i>
+          </button>
+
+          <div className="w-[100%] bg-neutral-700 h-[1px] mt-4"></div>
         </div>
       </div>
     </div>

@@ -9,11 +9,23 @@
 }
 
 .sidebar {
-  z-index: 1000;
+  z-index: 1;
 }
 
 .body {
   width: 100%;
+  z-index: 0;
+}
+
+.add-task-popup{
+  z-index: 2;
+  display: none;
+  box-shadow: 2px 2px 30px rgba(255, 255, 255, 0.452);
+}
+
+.add-task-popup-open{
+  display: block;
+  transition: all .3s ease;
 }
 
 .body-padding{
