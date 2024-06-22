@@ -50,7 +50,7 @@ function App() {
         id="services"
         className="services bg-slate-200 dark:bg-neutral-950 h-80 flex items-center flex-col pt-16"
       >
-        <div className="slogan-kinda bg-neutral-800 px-3 py-2 rounded-full text-red-400">Built for productivity</div>
+        <div className="slogan-kinda bg-neutral-900/50 px-3 py-2 rounded-full text-red-300 font-semibold absolute left-7">Built for productivity</div>
       </section>
     </>
   );
