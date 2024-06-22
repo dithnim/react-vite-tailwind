@@ -16,10 +16,10 @@ function App() {
         id="#home"
         className="home bg-white dark:bg-black h-auto flex items-center flex-col pt-16"
       >
-        <h1 className="text-dark dark:text-white lg:text-5xl md:text-4xl text-3xl font-semibold pb-3">
+        <h1 className="text-dark dark:text-white lg:text-5xl md:text-4xl text-3xl font-semibold pb-2">
           All your tasks on
         </h1>
-        <h1 className="text-dark dark:text-white lg:text-5xl md:text-4xl text-3xl font-semibold pb-5">
+        <h1 className="text-dark dark:text-white lg:text-5xl md:text-4xl text-3xl font-semibold pb-4">
           one platform.
         </h1>
         <h2 className="text-dark dark:text-white lg:text-4xl md:text-3xl">
@@ -47,7 +47,7 @@ function App() {
 
       <section
         id="services"
-        className="services bg-slate-200 dark:bg-neutral-950 h-screen flex items-center flex-col pt-16"
+        className="services bg-slate-200 dark:bg-neutral-950 h-80 flex items-center flex-col pt-16 rounded-t-full"
       >
         <div className="svgs gap-2 lg:gap-4">
           <div className="row1">
