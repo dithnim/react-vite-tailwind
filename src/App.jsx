@@ -8,7 +8,7 @@ import svg3 from "./assets/svg3.svg";
 import svg4 from "./assets/svg4.svg";
 import svg5 from "./assets/svg5.svg";
 import svg6 from "./assets/svg6.svg";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
@@ -48,9 +48,20 @@ function App() {
 
       <section
         id="services"
-        className="services bg-slate-200 dark:bg-neutral-950 h-80 flex items-center flex-col pt-16"
+        className="services bg-slate-200 dark:bg-neutral-950 h-auto flex items-center flex-col pt-16"
       >
-        <div className="slogan-kinda bg-neutral-900/50 px-3 py-2 rounded-full text-red-300 font-semibold absolute left-7">Built for productivity</div>
+        <div className="intro w-[90%] flex flex-col items-start justify-center">
+          <div className="slogan-kinda bg-neutral-900/50 px-3 py-2 rounded-full text-red-300 font-semibold  mb-4">
+            Built for productivity
+          </div>
+          <p className="font-semibold text-3xl mb-5">
+            Stay on top of your tasks and boost your productivity with Kodi.
+            Designed with simplicity and efficiency in mind, Kodi is the
+            ultimate tool for managing your daily tasks and collaborative
+            projects.
+          </p>
+        </div>
+        
       </section>
     </>
   );
