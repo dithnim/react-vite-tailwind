@@ -8,6 +8,7 @@ import svg3 from "./assets/svg3.svg";
 import svg4 from "./assets/svg4.svg";
 import svg5 from "./assets/svg5.svg";
 import svg6 from "./assets/svg6.svg";
+import './App.css';
 
 function App() {
   return (
@@ -47,22 +48,9 @@ function App() {
 
       <section
         id="services"
-        className="services bg-slate-200 dark:bg-neutral-950 h-80 flex items-center flex-col pt-16 rounded-t-full"
+        className="services bg-slate-200 dark:bg-neutral-950 h-80 flex items-center flex-col pt-16"
       >
-        <div className="svgs gap-2 lg:gap-4">
-          <div className="row1">
-            {ServiceSVG(svg1)}
-            {ServiceSVG(svg2)}
-          </div>
-          <div className="row2">
-            {ServiceSVG(svg3)}
-            {ServiceSVG(svg4)}
-          </div>
-          <div className="row3">
-            {ServiceSVG(svg5)}
-            {ServiceSVG(svg6)}
-          </div>
-        </div>
+        <div className="slogan-kinda bg-neutral-800 px-3 py-2 rounded-full text-red-400">Built for productivity</div>
       </section>
     </>
   );
