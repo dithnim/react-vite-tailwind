@@ -48,13 +48,14 @@ function App() {
 
       <section
         id="services"
-        className="services bg-slate-200 dark:bg-neutral-950 h-auto flex items-center flex-col pt-16"
+        className="services bg-slate-200 dark:bg-neutral-950 h-screen flex items-center flex-col pt-16"
       >
-        <div className="intro w-[90%] flex flex-col items-start justify-center">
+        <div className="purpleline absolute top-[600px] left-[28vw]"></div>
+        <div className="intro w-[90%] flex flex-col items-start justify-center z-10">
           <div className="slogan-kinda bg-neutral-900/50 px-3 py-2 rounded-full text-red-300 font-semibold  mb-4">
             Built for productivity
           </div>
-          <p className="font-semibold text-3xl mb-5">
+          <p className="font-semibold text-3xl mb-5 z-10">
             Stay on top of your tasks and boost your productivity with Kodi.
             Designed with simplicity and efficiency in mind, Kodi is the
             ultimate tool for managing your daily tasks and collaborative
