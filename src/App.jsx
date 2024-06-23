@@ -43,14 +43,14 @@ function App() {
         autoPlay
         muted
         src={vid}
-        className="vid absolute right-[60%] top-[20%] md:right-[70%] w-56 md:w-64 "
+        className="zoom-in absolute right-[60%] top-[20%] md:right-[70%] w-[140px] md:w-56 "
       ></video>
 
       <section
         id="services"
-        className="services bg-slate-200 dark:bg-neutral-950 h-auto flex flex-col items-center lg:flex-row pt-16"
+        className="services bg-slate-200 dark:bg-neutral-950 h-auto flex flex-col items-center px-20 lg:flex-row pt-16"
       >
-        <div className="intro w-[90%] flex flex-col items-start justify-center">
+        <div className="intro w-[40%] flex flex-col items-start justify-center">
           <div className="slogan-kinda bg-neutral-900/50 px-3 py-2 rounded-full text-red-300 font-semibold  mb-4">
             Built for productivity
           </div>
@@ -61,8 +61,27 @@ function App() {
             projects.
           </p>
         </div>
-        <div className="decor-services w-[50%]">
-          <p>sfse</p>
+        <div className="decor-services w-[60%] flex flex-col items-center font-semibold justify-center">
+          <div className="">
+            <label
+              htmlFor=""
+              className="text-2xl border border-neutral-900 px-[70px] py-6 rounded-full me-[15px]"
+            >
+              PRODUCTIVITY
+            </label>
+            <label
+              htmlFor=""
+              className="text-2xl border border-neutral-900 px-[70px] py-6 rounded-full"
+            >
+              VERSATILITY
+            </label>
+          </div>
+          <label
+            htmlFor=""
+            className="text-2xl border border-neutral-900 px-[225px] py-6 mt-[45px] rounded-full"
+          >
+            MINIMALISM
+          </label>
         </div>
       </section>
     </>
