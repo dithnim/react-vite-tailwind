@@ -50,7 +50,6 @@ function App() {
         id="services"
         className="services bg-slate-200 dark:bg-neutral-950 h-screen flex items-center flex-col pt-16"
       >
-        <div className="purpleline absolute top-[600px] left-[28vw]"></div>
         <div className="intro w-[90%] flex flex-col items-start justify-center z-10">
           <div className="slogan-kinda bg-neutral-900/50 px-3 py-2 rounded-full text-red-300 font-semibold  mb-4">
             Built for productivity
@@ -62,7 +61,6 @@ function App() {
             projects.
           </p>
         </div>
-        
       </section>
     </>
   );
