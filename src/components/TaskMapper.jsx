@@ -21,7 +21,7 @@ const TaskMapper = () => {
             <div className="left">
               <h1 className="task-title text-lg font-bold flex items-center">
                 <button onClick={() => removeTask(data.id)}>
-                  <i class="bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer"></i>
+                  <i className="bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer"></i>
                 </button>
                 {data.title}
               </h1>
@@ -29,8 +29,8 @@ const TaskMapper = () => {
             </div>
 
             <div className="right flex">
-              <i class="bx bx-edit text-lg me-1 cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
-              <i class="bx bx-dots-horizontal-rounded text-lg cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
+              <i className="bx bx-edit text-lg me-1 cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
+              <i className="bx bx-dots-horizontal-rounded text-lg cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
             </div>
           </div>
         );

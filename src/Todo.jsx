@@ -9,7 +9,7 @@ import TaskMapper from "./components/TaskMapper.jsx";
 function Row(svg, text) {
   return (
     <div className="normal-row flex items-center cursor-pointer mt-1 w-[95%] px-1 ps-2 rounded-md hover:bg-neutral-900 active:bg-red-500/15">
-      <i class={svg}></i>
+      <i className={svg}></i>
       <label htmlFor="addTask" className="cursor-pointer">
         {text}
       </label>
@@ -55,7 +55,7 @@ const Todo = () => {
             >
               KODI
             </label>
-            <i class="bx bxs-chevron-down text-xl ms-2"></i>
+            <i className="bx bxs-chevron-down text-xl ms-2"></i>
           </div>
 
           <div
@@ -74,7 +74,7 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-0"
               >
-                <i class="bx bx-plus me-2 text-lg"></i>
+                <i className="bx bx-plus me-2 text-lg"></i>
                 Add a team
               </a>
               <a
@@ -84,7 +84,7 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-1"
               >
-                <i class="bx bx-cog me-2 text-lg"></i>
+                <i className="bx bx-cog me-2 text-lg"></i>
                 Settings
               </a>
             </div>
@@ -97,7 +97,7 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-0"
               >
-                <i class="bx bx-desktop me-2 text-lg"></i>
+                <i className="bx bx-desktop me-2 text-lg"></i>
                 Activity log
               </a>
               <a
@@ -107,12 +107,12 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-1"
               >
-                <i class="bx bx-book me-2 text-lg"></i>
+                <i className="bx bx-book me-2 text-lg"></i>
                 Resources
               </a>
             </div>
 
-            <div class="py-1" role="none">
+            <div className="py-1" role="none">
               <a
                 href="#"
                 class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
@@ -120,12 +120,12 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-0"
               >
-                <i class="bx bx-gift me-2 text-lg"></i>
+                <i className="bx bx-gift me-2 text-lg"></i>
                 What's new
               </a>
             </div>
 
-            <div class="py-1" role="none">
+            <div className="py-1" role="none">
               <a
                 href="#"
                 class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
@@ -133,12 +133,12 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-0"
               >
-                <i class="bx bx-star me-2 text-lg text-yellow-400"></i>
+                <i className="bx bx-star me-2 text-lg text-yellow-400"></i>
                 Upgrade to pro
               </a>
             </div>
 
-            <div class="py-1" role="none">
+            <div className="py-1" role="none">
               <a
                 href="#"
                 class="flex items-center px-4 py-1 text-sm hover:bg-neutral-800 rounded-lg"
@@ -146,21 +146,21 @@ const Todo = () => {
                 tabindex="-1"
                 id="menu-item-0"
               >
-                <i class="bx bx-log-out me-2 text-lg"></i>
+                <i className="bx bx-log-out me-2 text-lg"></i>
                 log out
               </a>
             </div>
 
-            <div class="py-1" role="none">
+            <div className="py-1" role="none">
               <p className="px-4 text-sm">v1.0 . changelog</p>
             </div>
           </div>
 
           <div className="first-row-btns flex">
-            <i class="bx bx-bell text-2xl cursor-pointer hover:bg-neutral-800 delay-75 w-8 h-8 flex justify-center rounded-full"></i>
-            <i class="bx bx-cog text-2xl cursor-pointer ms-1 hover:bg-neutral-800 delay-75 w-8 h-8 flex justify-center rounded-full"></i>
+            <i className="bx bx-bell text-2xl cursor-pointer hover:bg-neutral-800 delay-75 w-8 h-8 flex justify-center rounded-full"></i>
+            <i className="bx bx-cog text-2xl cursor-pointer ms-1 hover:bg-neutral-800 delay-75 w-8 h-8 flex justify-center rounded-full"></i>
             <button onClick={toggleSidebar} id="btn-menu">
-              <i class="bx bx-sidebar text-xl cursor-pointer bg-neutral-900 w-8 h-8 left-[300px] top-4 flex justify-center items-center rounded-full absolute hover:bg-white hover:text-black"></i>
+              <i className="bx bx-sidebar text-xl cursor-pointer bg-neutral-900 w-8 h-8 left-[300px] top-4 flex justify-center items-center rounded-full absolute hover:bg-white hover:text-black"></i>
             </button>
           </div>
         </div>
@@ -169,7 +169,7 @@ const Todo = () => {
           className="second-row flex items-center cursor-pointer my-5 w-[95%] px-1 ps-2 py-2 rounded-md hover:bg-neutral-900"
           onClick={toggleAddTask}
         >
-          <i class="bx bx-plus bg-red-500 me-2 p-1 rounded-full cursor-pointer"></i>
+          <i className="bx bx-plus bg-red-500 me-2 p-1 rounded-full cursor-pointer"></i>
           <label htmlFor="addTask" className="text-red-600 cursor-pointer">
             Add task
           </label>
@@ -204,7 +204,7 @@ const Todo = () => {
           <label htmlFor="addTask" className="font-bold text-lg cursor-pointer">
             # Tags & Filters
           </label>
-          <i class="bx bxs-chevron-down text-xl me-1 text-neutral-400 hover:text-white"></i>
+          <i className="bx bxs-chevron-down text-xl me-1 text-neutral-400 hover:text-white"></i>
         </div>
 
         {Row(
@@ -231,8 +231,8 @@ const Todo = () => {
             # My projects
           </label>
           <div className="">
-            <i class="bx bx-plus text-xl me-2 text-neutral-400 hover:text-white"></i>
-            <i class="bx bxs-chevron-down text-xl me-1 text-neutral-400 hover:text-white"></i>
+            <i className="bx bx-plus text-xl me-2 text-neutral-400 hover:text-white"></i>
+            <i className="bx bxs-chevron-down text-xl me-1 text-neutral-400 hover:text-white"></i>
           </div>
         </div>
       </div>
@@ -245,11 +245,11 @@ const Todo = () => {
         <section className="task-section flex w-[60%] items-start justify-center flex-col">
           <h1 className="text-4xl font-semibold mb-3">Today</h1>
           <label htmlFor="task-count" style={{ display: "none" }}>
-            <i class="bx bx-check-circle"></i>
+            <i className="bx bx-check-circle"></i>
             <label htmlFor="task">{" 0 "}tasks</label>
           </label>
           <button className="flex items-center" onClick={toggleAddTask}>
-            <i class="bx bx-plus me-2 text-lg text-red-500 px-1 rounded-full hover:bg-red-500 hover:text-white"></i>
+            <i className="bx bx-plus me-2 text-lg text-red-500 px-1 rounded-full hover:bg-red-500 hover:text-white"></i>
             Add task
           </button>
           <TaskMapper />

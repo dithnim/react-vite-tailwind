@@ -30,7 +30,7 @@ const Navbar = () => {
         <li>Contact</li>
       </ul>
 
-      <div class="drop absolute  dark:bg-neutral-900 right-[50%] dark:text-white z-10 mt-20 w-32 divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none px-3 py-1">
+      <div className="drop absolute  dark:bg-neutral-900 right-[50%] dark:text-white z-10 mt-20 w-32 divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none px-3 py-1">
         Coming Soon
       </div>
 
