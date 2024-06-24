@@ -29,8 +29,8 @@ const TaskMapper = () => {
             </div>
 
             <div className="right flex">
-              <i class="bx bx-edit text-lg me-2 cursor-pointer"></i>
-              <i class="bx bx-dots-horizontal-rounded text-lg cursor-pointer"></i>
+              <i class="bx bx-edit text-lg me-1 cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
+              <i class="bx bx-dots-horizontal-rounded text-lg cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
             </div>
           </div>
         );
