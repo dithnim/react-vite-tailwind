@@ -249,7 +249,7 @@ const Todo = () => {
             <i class="bx bx-check-circle"></i>
             <label htmlFor="task">{" 0 "}tasks</label>
           </label>
-          <button className="flex items-center">
+          <button className="flex items-center" onClick={toggleAddTask}>
             <i class="bx bx-plus me-2 text-lg text-red-500 px-1 rounded-full hover:bg-red-500 hover:text-white"></i>
             Add task
           </button>
