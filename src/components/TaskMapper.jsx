@@ -1,10 +1,13 @@
 import React from "react";
-import { tasks } from "./Data.jsx";
+import { rawTasks } from "./Data.jsx";
+import { useState } from "react";
 
 const TaskMapper = () => {
+  const [task, setTask] = useState(rawTasks);
+
   return (
     <div className="flex flex-col w-[100%] mt-10">
-      {tasks.map((data) => {
+      {task.map((data) => {
         return (
           <div
             className="task-container w-full bg-neutral-950 mb-2 py-2 px-4 rounded-xl flex justify-between"

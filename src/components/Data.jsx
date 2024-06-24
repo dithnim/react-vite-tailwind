@@ -1,4 +1,4 @@
-export const tasks = [
+export const rawTasks = [
   {
     id: 0,
     title: "Watch recordings",
