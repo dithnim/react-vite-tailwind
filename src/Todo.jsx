@@ -243,6 +243,17 @@ const Todo = () => {
         className="body flex flex-col items-center justify-center h-screen ms-auto"
         id="todo-body"
       >
+        <section className="task-section flex w-[60%] items-start justify-center flex-col">
+          <h1 className="text-4xl font-semibold mb-3">Today</h1>
+          <label htmlFor="task-count" style={{ display: "none" }}>
+            <i class="bx bx-check-circle"></i>
+            <label htmlFor="task">{" 0 "}tasks</label>
+          </label>
+          <button className="flex items-center">
+            <i class="bx bx-plus me-2 text-lg text-red-500 px-1 rounded-full hover:bg-red-500 hover:text-white"></i>
+            Add task
+          </button>
+        </section>
         <img src={bodySvg} alt="" className="body-svg w-80" />
         <div className="null-content mt-4 flex items-center flex-col">
           <h2 className="text-lg font-semibold">
