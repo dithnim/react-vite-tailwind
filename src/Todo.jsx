@@ -1,6 +1,4 @@
 import React from "react";
-import TodoNavbar from "./components/TodoNavbar.jsx";
-import Sidebar from "./components/Sidebar.jsx";
 import bodySvg from "./assets/body.svg";
 import "./components/Todo.css";
 import proPic from "./assets/pro-pic.jpg";
