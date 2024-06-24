@@ -1,9 +1,58 @@
 import React from "react";
 import { rawTasks } from "./Data.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const TaskMapper = () => {
   const [task, setTask] = useState(rawTasks);
+  // const [newTaskName, setNewTaskName] = useState("");
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  // const fetchTask = async () => {
+  //   try {
+  //     const response = await fetch("localhost:5173/todo");
+  //     if (!response.ok) {
+  //       throw new Error("Bad response");
+  //     }
+  //     const data = await response.json();
+  //     setTask(data);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     setError(error);
+  //     setLoading(false);
+  //   }
+  // };
+
+  // fetchTask();
+
+  // const addTask = async () => {
+  //   try {
+  //     const response = await fetch("localhost:5173/todo", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ name: newTaskName }),
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error("Network response was not ok");
+  //     }
+  //     const newTask = await response.json();
+  //     // Add the new task to the local state
+  //     setTask([...task, newTask]);
+  //     setNewTaskName("");
+  //   } catch (error) {
+  //     setError(error);
+  //   }
+  // };
+
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
+  // if (error) {
+  //   return <div>Error: {error.message}</div>;
+  // }
 
   const removeTask = (id) => {
     const newTask = task.filter((removedTask) => removedTask.id !== id);
