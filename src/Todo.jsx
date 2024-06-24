@@ -256,15 +256,19 @@ const Todo = () => {
           </button>
           <TaskMapper />
         </section>
-        <img src={bodySvg} alt="" className="body-svg w-80" />
-        <div className="null-content mt-4 flex items-center flex-col">
-          <h2 className="text-lg font-semibold">
-            You're all done for today, KODI!
-          </h2>
-          <p className="text-sm mt-2">
-            Enjoy the rest of your day and Don't forget
-          </p>
-          <p className="text-sm">to keep your tasks organized : )</p>
+
+        {/* Style for no task window */}
+        <div className="null-content" style={{ display: "none" }}>
+          <img src={bodySvg} alt="" className="body-svg w-80" />
+          <div className="mt-4 flex items-center flex-col">
+            <h2 className="text-lg font-semibold">
+              You're all done for today, KODI!
+            </h2>
+            <p className="text-sm mt-2">
+              Enjoy the rest of your day and Don't forget
+            </p>
+            <p className="text-sm">to keep your tasks organized : )</p>
+          </div>
         </div>
       </div>
 
