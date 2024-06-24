@@ -5,6 +5,11 @@ import { useState } from "react";
 const TaskMapper = () => {
   const [task, setTask] = useState(rawTasks);
 
+  const removeTask = (id) => {
+    const newTask = task.filter((removedTask) => removedTask.id !== id);
+    setTask(newTask);
+  };
+
   return (
     <div className="flex flex-col w-[100%] mt-10">
       {task.map((data) => {
@@ -15,7 +20,9 @@ const TaskMapper = () => {
           >
             <div className="left">
               <h1 className="task-title text-lg font-bold flex items-center">
-                <i class="bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer"></i>
+                <button onClick={() => removeTask(data.id)}>
+                  <i class="bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer"></i>
+                </button>
                 {data.title}
               </h1>
               <p className="task-desc text-md ms-8">{data.desc}</p>
