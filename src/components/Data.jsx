@@ -1,11 +1,11 @@
 export const tasks = [
   {
-    id: 1,
+    id: 0,
     title: "Watch recordings",
     desc: "Need to watch SE recordings",
   },
   {
-    id: 2,
+    id: 1,
     title: "Play games",
     desc: "Need to play Forza Horizon 5",
   },

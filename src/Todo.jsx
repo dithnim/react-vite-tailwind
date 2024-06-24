@@ -6,6 +6,7 @@ import "./components/Todo.css";
 import proPic from "./assets/pro-pic.jpg";
 import { useState } from "react";
 import AddTaskPopup from "./components/AddTaskPopup.jsx";
+import TaskMapper from "./components/TaskMapper.jsx";
 
 function Row(svg, text) {
   return (
@@ -253,6 +254,7 @@ const Todo = () => {
             <i class="bx bx-plus me-2 text-lg text-red-500 px-1 rounded-full hover:bg-red-500 hover:text-white"></i>
             Add task
           </button>
+          <TaskMapper />
         </section>
         <img src={bodySvg} alt="" className="body-svg w-80" />
         <div className="null-content mt-4 flex items-center flex-col">
