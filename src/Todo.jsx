@@ -7,6 +7,7 @@ import AddTaskPopup from "./components/AddTaskPopup.jsx";
 import TaskMapper from "./components/TaskMapper.jsx";
 
 function Row(svg, text) {
+
   return (
     <div className="normal-row flex items-center cursor-pointer mt-1 w-[95%] px-1 ps-2 rounded-md hover:bg-neutral-900 active:bg-red-500/15">
       <i className={svg}></i>
