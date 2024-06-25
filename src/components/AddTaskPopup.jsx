@@ -2,22 +2,27 @@ import React from "react";
 import { useState } from "react";
 import TaskMapper from "./TaskMapper";
 
-const [input, setInput] = useState("");
-const [todos, setTodos] = useState([]);
-
-const handleInputChange = (e) => {
-  setInput(e.target.value);
-};
-
-const handleFromSubmit = (e) => {
-  e.preventDefault();
-  if (input.trim() !== "") {
-    setTodos([...todos, { id: Date.now(), title: input }]);
-    setInput("");
-  }
-};
-
 const AddTaskPopup = () => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+  const handleDescChange = (e) => {
+    setDesc(e.target.value);
+  };
+
+  const handleFromSubmit = (e) => {
+    e.preventDefault();
+    if (title.trim() !== "" && desc.trim() !== "") {
+      setTodos([...todos, { id: todos.length + 1, title, desc }]);
+      setTitle("");
+      setDesc("");
+    }
+  };
+
   const toggleAddTask = () => {
     document
       .getElementById("add-task-popup")
@@ -44,12 +49,14 @@ const AddTaskPopup = () => {
           type="text"
           placeholder="Task name"
           className="bg-transparent outline-0 font-semibold text-xl w-full"
-          value={input}
-          onChange={handleInputChange}
+          value={title}
+          onChange={handleTitleChange}
         />
         <input
           type="text"
           placeholder="Description"
+          value={desc}
+          onChange={handleDescChange}
           className="bg-transparent outline-0 font-semibold text-sm w-full mt-2"
         />
         <div className="add-task-btns mt-2">
@@ -202,7 +209,7 @@ const AddTaskPopup = () => {
             </button>
           </div>
         </div>
-        <TaskMapper todos={todos}/>
+        <TaskMapper tasks={todos} />
       </form>
     </div>
   );

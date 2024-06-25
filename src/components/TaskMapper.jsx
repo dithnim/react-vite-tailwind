@@ -2,12 +2,18 @@ import React from "react";
 import { rawTasks } from "./Data.jsx";
 import { useState, useEffect } from "react";
 
-const TaskMapper = ({todos}) => {
-  const [task, setTask] = useState(todos);
+const TaskMapper = ({ tasks = [] }) => {
+  const [task, setTask] = useState([]);
+  const [newTask, setNewTask] = useState([]);
+
+  useEffect(() => {
+    setTask(newTask);
+  }, [task])
 
   const removeTask = (id) => {
-    const newTask = task.filter((removedTask) => removedTask.id !== id);
-    setTask(newTask);
+    const remTask = task.filter((removedTask) => removedTask.id !== id);
+    setTask(remTask);
+    setNewTask(remTask);
   };
 
   return (
