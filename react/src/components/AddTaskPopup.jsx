@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import TaskMapper from "./TaskMapper";
+import Data from './Data.jsx'
 
 const AddTaskPopup = () => {
   const [title, setTitle] = useState("");
@@ -209,7 +210,7 @@ const AddTaskPopup = () => {
             </button>
           </div>
         </div>
-        <TaskMapper tasks={todos} />
+        <Data tasklist={todos} />
       </form>
     </div>
   );
