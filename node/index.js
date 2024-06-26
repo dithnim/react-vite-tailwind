@@ -14,6 +14,6 @@ app.listen(5173, () => {
 });
 
 app.get("/", async (req, res) => {
-  const items = await taskModel.find();
-  res.json(items);
+  const tasks = await taskModel.find();
+  res.json(tasks);
 });
