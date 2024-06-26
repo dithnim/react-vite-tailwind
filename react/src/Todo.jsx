@@ -3,6 +3,7 @@ import bodySvg from "./assets/body.svg";
 import "./components/Todo.css";
 import proPic from "./assets/pro-pic.jpg";
 import { useState } from "react";
+import { useEffect } from "react";
 import AddTaskPopup from "./components/AddTaskPopup.jsx";
 import TaskMapper from "./components/TaskMapper.jsx";
 
@@ -18,6 +19,18 @@ function Row(svg, text) {
 }
 
 const Todo = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:5173/todo");
+      const data = response.json();
+      console.log(data);
+    };
+
+    fetchData();
+  }, []);
+
   const toggleSidebar = () => {
     document.getElementById("sidebar").classList.toggle("sidebar-open");
     document.getElementById("todo-body").classList.toggle("body-padding");
