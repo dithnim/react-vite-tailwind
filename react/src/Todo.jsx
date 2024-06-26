@@ -19,17 +19,6 @@ function Row(svg, text) {
 }
 
 const Todo = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:5173/todo");
-      const data = response.json();
-      console.log(data);
-    };
-
-    fetchData();
-  }, []);
 
   const toggleSidebar = () => {
     document.getElementById("sidebar").classList.toggle("sidebar-open");
