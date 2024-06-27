@@ -61,7 +61,7 @@ const AddTaskPopup = () => {
 
   return (
     <div
-      className="add-task-popup bg-neutral-900 absolute top-[30%] left-[25%] w-[60%] rounded-md p-2 px-4 shadow-xl flex flex-col"
+      className="add-task-popup bg-neutral-950 absolute top-[30%] left-[25%] w-[60%] rounded-2xl p-2 px-4  flex flex-col"
       id="add-task-popup"
     >
       <form onSubmit={handleFromSubmit}>

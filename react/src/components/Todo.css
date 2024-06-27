@@ -1,3 +1,7 @@
+:root {
+  --border-color: rgba(71, 71, 71, 0.478);
+}
+
 .sidebar-close {
   left: -290px;
   transition: left 0.5s ease;
@@ -20,8 +24,7 @@
 .add-task-popup {
   z-index: 2;
   display: none;
-  box-shadow: 2px 2px 30px rgba(117, 116, 116, 0.452);
-  border: 1px solid rgba(128, 128, 128, 0.478);
+  border: 1px solid var(--border-color);
 }
 
 .add-task-popup-open {
@@ -51,7 +54,7 @@
     display: none;
   }
 
-  .null-content{
+  .null-content {
     display: none;
   }
 }
