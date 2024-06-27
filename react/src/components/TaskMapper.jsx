@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import AddTaskPopup from "./AddTaskPopup.jsx";
 
 const TaskMapper = () => {
   const [tasks, setTasks] = useState([]);
@@ -67,6 +68,7 @@ const TaskMapper = () => {
           </div>
         );
       })}
+      <AddTaskPopup />
     </div>
   );
 };

@@ -49,6 +49,10 @@
   display: block;
 }
 
+.null-content-none {
+  display: none;
+}
+
 @media (max-width: 800px) {
   .body-svg {
     display: none;
