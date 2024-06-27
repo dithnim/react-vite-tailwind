@@ -23,7 +23,7 @@ const TaskMapper = () => {
   }, []);
 
   const removeTask = (id) => {
-    const newTask = tasks.filter((removedTask) => removedTask.id !== id);
+    const newTask = tasks.filter((removedTask) => removedTask._id !== id);
     setTasks(newTask);
   };
 
@@ -33,11 +33,11 @@ const TaskMapper = () => {
         return (
           <div
             className="task-container w-full bg-neutral-950 mb-2 py-2 px-4 rounded-xl flex justify-between"
-            key={data.id}
+            key={data._id}
           >
             <div className="left">
               <h1 className="task-title text-lg font-bold flex items-center">
-                <button onClick={() => removeTask(data.id)}>
+                <button onClick={() => removeTask(data._id)}>
                   <i className="bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer"></i>
                 </button>
                 {data.title}
