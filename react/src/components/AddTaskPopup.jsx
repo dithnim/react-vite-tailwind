@@ -1,12 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import TaskMapper from "./TaskMapper";
-import Data from './Data.jsx'
 
 const AddTaskPopup = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
-  const [todos, setTodos] = useState([]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -15,12 +13,33 @@ const AddTaskPopup = () => {
     setDesc(e.target.value);
   };
 
-  const handleFromSubmit = (e) => {
+  const handleFromSubmit = async (e) => {
     e.preventDefault();
-    if (title.trim() !== "" && desc.trim() !== "") {
-      setTodos([...todos, { id: todos.length + 1, title, desc }]);
-      setTitle("");
-      setDesc("");
+
+    const newTask = {
+      title,
+      desc,
+    };
+
+    try {
+      const response = await fetch("http://localhost:3000/api/tasks", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTask),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        toggleAddTask();
+        setTitle("");
+        setDesc("");
+      } else {
+        console.error("Failed to create task:", data.message);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -210,7 +229,6 @@ const AddTaskPopup = () => {
             </button>
           </div>
         </div>
-        <Data tasklist={todos} />
       </form>
     </div>
   );

@@ -22,9 +22,24 @@ const TaskMapper = () => {
     fetchData();
   }, []);
 
-  const removeTask = (id) => {
-    const newTask = tasks.filter((removedTask) => removedTask._id !== id);
-    setTasks(newTask);
+  const removeTask = async (id) => {
+    try {
+      const response = await fetch("http://localhost:3000/api/tasks/" + id, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        console.log("Something went wrong while deleting task " + id);
+      }
+      alert("Task complete");
+      const newTask = tasks.filter((removedTask) => removedTask._id !== id);
+      setTasks(newTask);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
