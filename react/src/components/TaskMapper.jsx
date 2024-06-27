@@ -10,9 +10,10 @@ const TaskMapper = () => {
         const response = await fetch("http://localhost:3000/");
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
+        } else {
+          const data = await response.json();
+          setTasks(data);
         }
-        const data = await response.json();
-        setTasks(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
