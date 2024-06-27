@@ -19,30 +19,30 @@ function Row(svg, text) {
 }
 
 const Todo = () => {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/");
-        // if (!response.ok) {
-        //   throw new Error(`HTTP error! Status: ${response.status}`);
-        // } else {
-        //   const data = await response.json();
-        //   setTasks(data);
-        // }
-        const data = await response.json();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:3000/");
+  //       // if (!response.ok) {
+  //       //   throw new Error(`HTTP error! Status: ${response.status}`);
+  //       // } else {
+  //       //   const data = await response.json();
+  //       //   setTasks(data);
+  //       // }
+  //       const data = await response.json();
 
-        if (data.lenght === 0) {
-          document
-            .getElementById("null-content")
-            .classList.toggle("null-content-none");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  //       if (data.lenght === 0) {
+  //         document
+  //           .getElementById("null-content")
+  //           .classList.toggle("null-content-none");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const toggleSidebar = () => {
     document.getElementById("sidebar").classList.toggle("sidebar-open");
@@ -282,7 +282,11 @@ const Todo = () => {
         </section>
 
         {/* Style for no task window */}
-        <div className="null-content" id="null-content">
+        <div
+          className="null-content"
+          id="null-content"
+          tyle={{ display: "none" }}
+        >
           <img src={bodySvg} alt="" className="body-svg w-80" />
           <div className="mt-4 flex items-center flex-col">
             <h2 className="text-lg font-semibold">
