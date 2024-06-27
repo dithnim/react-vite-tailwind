@@ -19,6 +19,7 @@ function Row(svg, text) {
 }
 
 const Todo = () => {
+  
 
   const toggleSidebar = () => {
     document.getElementById("sidebar").classList.toggle("sidebar-open");

@@ -1,22 +1,34 @@
 import React from "react";
-import {tasks} from './Data'
 import { useState, useEffect } from "react";
 
 const TaskMapper = () => {
-  const [task, setTask] = useState(tasks);
+  const [tasks, setTasks] = useState([]);
 
-  // useEffect(() => {
-  //   setTask(tasks);
-  // }, [tasks])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setTasks(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const removeTask = (id) => {
-    const newTask = task.filter((removedTask) => removedTask.id !== id);
-    setTask(newTask);
+    const newTask = tasks.filter((removedTask) => removedTask.id !== id);
+    setTasks(newTask);
   };
 
   return (
     <div className="flex flex-col w-[100%] mt-10">
-      {task.map((data) => {
+      {tasks.map((data) => {
         return (
           <div
             className="task-container w-full bg-neutral-950 mb-2 py-2 px-4 rounded-xl flex justify-between"
