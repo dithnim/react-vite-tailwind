@@ -285,7 +285,7 @@ const Todo = () => {
         <div
           className="null-content"
           id="null-content"
-          tyle={{ display: "none" }}
+          style={{ display: "none" }}
         >
           <img src={bodySvg} alt="" className="body-svg w-80" />
           <div className="mt-4 flex items-center flex-col">
