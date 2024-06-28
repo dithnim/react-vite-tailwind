@@ -47,7 +47,7 @@ const TaskMapper = () => {
   };
 
   return (
-    <div className="flex flex-col w-[100%] mt-10">
+    <div className="flex flex-col w-[100%] mt-6">
       {tasks.map((data) => {
         return (
           <div

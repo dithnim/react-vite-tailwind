@@ -156,7 +156,7 @@ const AddTaskPopup = () => {
           </button>
 
           <div
-            className="priority-popup-close absolute left-[80px] z-10 mt-2 w-26 divide-y divide-gray-100 rounded-md bg-neutral-900 ring-1 ring-white ring-opacity-5 focus:outline-none"
+            className="priority-popup-close absolute ms-[65px] z-10 mt-2 w-26 divide-y divide-gray-100 rounded-md bg-neutral-900 ring-1 ring-white ring-opacity-5 focus:outline-none"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="menu-button"

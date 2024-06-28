@@ -276,9 +276,10 @@ const Todo = () => {
             <label htmlFor="task">{" 0 "}tasks</label>
           </label>
           <button className="flex items-center" onClick={toggleAddTask}>
-            <i className="bx bx-plus me-2 text-lg text-red-500 px-1 rounded-full hover:bg-red-500 hover:text-white"></i>
+            <i className="bx bx-plus me-2 text-lg text-red-500 px-1 rounded-full hover:bg-red-500 hover:text-white flex items-center w-6 h-6 justify-center"></i>
             Add task
           </button>
+          <div className="hr mt-2 h-[1px] bg-neutral-900 w-[100%]"></div>
           <TaskMapper />
         </section>
 
@@ -299,7 +300,7 @@ const Todo = () => {
             <p className="text-sm">to keep your tasks organized : )</p>
           </div>
         </div>
-      <SuccessPopup status="Added"/>
+        <SuccessPopup status="Added" />
       </div>
     </div>
   );
