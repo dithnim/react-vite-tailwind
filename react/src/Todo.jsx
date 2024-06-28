@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import AddTaskPopup from "./components/AddTaskPopup.jsx";
 import TaskMapper from "./components/TaskMapper.jsx";
+import SuccessPopup from "./components/SuccessPopup.jsx";
 
 function Row(svg, text) {
   return (
@@ -298,6 +299,7 @@ const Todo = () => {
             <p className="text-sm">to keep your tasks organized : )</p>
           </div>
         </div>
+      <SuccessPopup status="Added"/>
       </div>
     </div>
   );
