@@ -76,6 +76,23 @@ h1,
   will-change: transform;
 }
 
+.success-popup{
+  display: flex;
+  transform: translateY(-12px);
+  transition: all 0.2s ease-in-out;
+}
+
+.success-popup-close{
+  display: none;
+  transform: translateY(50px);
+  transition: all 0.2s ease-in-out;
+}
+
+.slide-up{
+  animation: slideup 1.2s ease-in-out forwards;
+  opacity: 0;
+}
+
 .zoom-in{
   animation: zoomin 1.7s ease-in-out forwards;
   opacity: 0;
@@ -86,6 +103,7 @@ h1,
   animation-delay: 50ms;
   opacity: 0;
 }
+
 
 @keyframes zoomin {
   from{
