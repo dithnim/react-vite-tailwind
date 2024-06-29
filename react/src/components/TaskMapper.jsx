@@ -28,7 +28,7 @@ const TaskMapper = () => {
   const removeTask = async (id) => {
     try {
       const response = await fetch(
-        "https://dkodi-backend.netlify.app/.netlify/functions/api?id=" + id,
+        "https://dkodi-backend.netlify.app/.netlify/functions/api",
         {
           method: "DELETE",
           headers: {
