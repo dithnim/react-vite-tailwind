@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import TaskMapper from "./TaskMapper";
 
-const AddTaskPopup = () => {
+const AddTaskPopup = (t,d) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
