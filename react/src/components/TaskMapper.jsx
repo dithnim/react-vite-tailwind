@@ -8,7 +8,9 @@ const TaskMapper = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/");
+        const response = await fetch(
+          "https://dkodi-backend.netlify.app/.netlify/functions/api"
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         } else {
