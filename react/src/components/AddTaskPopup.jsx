@@ -22,7 +22,7 @@ const AddTaskPopup = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/api/tasks", {
+      const response = await fetch("https://dkodi-backend.netlify.app/.netlify/functions/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
