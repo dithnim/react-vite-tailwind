@@ -28,7 +28,7 @@ const TaskMapper = () => {
   const removeTask = async (id) => {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/tasks/" + id,
+        "https://dkodi-backend.netlify.app/.netlify/functions/api?id=" + id,
         {
           method: "DELETE",
           headers: {
@@ -39,8 +39,8 @@ const TaskMapper = () => {
 
       if (!response.ok) {
         console.log("Something went wrong while deleting task " + id);
+        return;
       }
-      alert("Task complete");
       const newTask = tasks.filter((removedTask) => removedTask._id !== id);
       setTasks(newTask);
     } catch (error) {
