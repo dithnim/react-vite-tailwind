@@ -26,4 +26,6 @@ dist-ssr
 tailwind.config.js
 vite.config.js
 postcss.config.js
+package.json
+package-lock.json
 netlify.toml
