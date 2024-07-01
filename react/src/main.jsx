@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./components/Error.jsx";
 import Login from "./Login.jsx";
 import Todo from "./Todo.jsx";
+import Challenge from "./Challenge.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     path: "/todo",
     element: <Todo />,
   },
+  {
+    path: "/challenge",
+    element: <Challenge />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
