@@ -5,7 +5,7 @@ const challenge = () => {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-3xl font-semibold mt-5">
-        Welcome to a fun challenge
+        Welcome to BlackHawk 401
       </h1>
       <img src={photo} alt="photo" className="w-[640px] h-[427px] mt-16" />
       <div className="bottom mt-20 flex items-center justify-between w-[60%]">
