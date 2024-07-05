@@ -1,7 +1,7 @@
 import React from "react";
 import photo from "./assets/photo-challenge.jpg";
 
-const challenge = () => {
+const Challenge = () => {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-3xl font-semibold mt-5">
@@ -18,4 +18,4 @@ const challenge = () => {
   );
 };
 
-export default challenge;
+export default Challenge;
