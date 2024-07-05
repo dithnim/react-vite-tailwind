@@ -57,7 +57,7 @@ function App() {
             projects.
           </p>
         </div>
-        <div className="decor-services w-[100%] lg:w-[60%] lg:px-2 flex flex-col items-center font-semibold justify-center mt-20">
+        <div className="decor-services w-[100%] lg:w-[60%] lg:px-2 flex flex-col items-center font-semibold justify-center mt-6 lg:mt-0">
           <div className="flex">
             <label
               htmlFor=""

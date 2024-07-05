@@ -14,9 +14,12 @@ const Navbar = () => {
 
   return (
     <nav className="navbar bg-white dark:bg-black flex items-center justify-between px-3 md:px-10 lg:px-12 xl:px-14 pt-1">
-      <p className="logo text-black dark:text-white" onClick={navigateToHome}>
-        K<span>O</span>DI
-      </p>
+      <div className="flex items-center justify-between">
+        <i className="bx bx-menu me-1 px-1 rounded-full text-2xl hover:bg-neutral-900 cursor-pointer"></i>
+        <p className="logo text-black dark:text-white" onClick={navigateToHome}>
+          K<span>O</span>DI
+        </p>
+      </div>
 
       <ul className="navlist text-black dark:text-white">
         <button onClick={navigateToHome}>
