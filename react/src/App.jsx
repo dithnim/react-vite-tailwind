@@ -46,11 +46,11 @@ function App() {
         id="services"
         className="services bg-slate-200 dark:bg-neutral-950 h-auto flex flex-col items-center px-20 lg:flex-row pt-16"
       >
-        <div className="intro w-[100%] lg:w-[60%] flex flex-col items-start justify-center">
+        <div className="intro w-[100%] lg:w-[60%]  flex flex-col items-start justify-center">
           <div className="slogan-kinda bg-neutral-900/50 px-3 py-2 rounded-full text-red-300 font-semibold  mb-4">
             Built for productivity
           </div>
-          <p className="font-semibold text-3xl mb-5 z-10">
+          <p className="font-semibold text-xl md:text-2xl lg:text-3xl mb-5 z-10">
             Stay on top of your tasks and boost your productivity with Kodi.
             Designed with simplicity and efficiency in mind, Kodi is the
             ultimate tool for managing your daily tasks and collaborative
@@ -61,20 +61,20 @@ function App() {
           <div className="flex">
             <label
               htmlFor=""
-              className="text-sm md:text-lg lg:text-2xl border border-neutral-900 px-[10vw] lg:px-[70px] py-6 rounded-full me-[15px]"
+              className="text-sm md:text-lg lg:text-2xl border border-neutral-900 px-[10vw] lg:px-[70px] py-5 lg:py-6 rounded-full me-[15px]"
             >
               PRODUCTIVITY
             </label>
             <label
               htmlFor=""
-              className="text-sm md:text-lg lg:text-2xl border border-neutral-900 px-[10vw] lg:px-[70px] py-6 rounded-full"
+              className="text-sm md:text-lg lg:text-2xl border border-neutral-900 px-[10vw] lg:px-[70px] py-5 lg:py-6 rounded-full"
             >
               VERSATILITY
             </label>
           </div>
           <label
             htmlFor=""
-            className="text-sm md:text-lg lg:text-2xl border border-neutral-900 px-[29vw] lg:px-[225px] py-6 mt-[15px] rounded-full"
+            className="text-sm md:text-lg lg:text-2xl border border-neutral-900 px-[29vw] lg:px-[225px] py-5 lg:py-6 mt-[15px] rounded-full"
           >
             MINIMALISM
           </label>
