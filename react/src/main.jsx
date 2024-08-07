@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/challenge",
     element: <Challenge />,
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

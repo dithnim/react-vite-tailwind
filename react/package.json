@@ -13,15 +13,16 @@
   "dependencies": {
     "boxicons": "^2.1.4",
     "express": "^4.19.2",
+    "jwt-decode": "^4.0.0",
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.4",
+    "netlify-cli": "^17.30.0",
+    "netlify-lambda": "^2.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
     "react-router-dom": "^6.23.1",
-    "netlify-cli": "^17.30.0",
-    "netlify-lambda": "^2.0.16",
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@ import "./login.css";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 import { useNavigate } from "react-router-dom";
+import jwt_decode from 'jwt-decode';
 
 const clientId =
   "428957910211-3gi9jf9226s7t45ds0fep8mmk4134bi8.apps.googleusercontent.com";
