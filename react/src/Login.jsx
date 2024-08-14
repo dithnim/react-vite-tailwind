@@ -4,7 +4,6 @@ import "./login.css";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 import { useNavigate } from "react-router-dom";
-import jwt_decode from 'jwt-decode';
 
 const clientId =
   "428957910211-3gi9jf9226s7t45ds0fep8mmk4134bi8.apps.googleusercontent.com";
@@ -23,6 +22,14 @@ const Login = () => {
   const navigateToTodo = () => {
     Navigate("/todo");
   };
+
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId());
+    console.log("Name: " + profile.getName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+  }
 
   function handleData(data) {
     data.preventDefault();
@@ -55,7 +62,7 @@ const Login = () => {
             <GoogleLogin
               clientId={clientId}
               buttonText="Login with google"
-              onSuccess={onSuccess}
+              onSuccess={onSignIn}
               onFailure={onFailure}
               className="g-btn mb-3"
             />

@@ -20,31 +20,6 @@ function Row(svg, text) {
 }
 
 const Todo = () => {
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch("http://localhost:3000/");
-  //       // if (!response.ok) {
-  //       //   throw new Error(`HTTP error! Status: ${response.status}`);
-  //       // } else {
-  //       //   const data = await response.json();
-  //       //   setTasks(data);
-  //       // }
-  //       const data = await response.json();
-
-  //       if (data.lenght === 0) {
-  //         document
-  //           .getElementById("null-content")
-  //           .classList.toggle("null-content-none");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
   const toggleSidebar = () => {
     document.getElementById("sidebar").classList.toggle("sidebar-open");
     document.getElementById("todo-body").classList.toggle("body-padding");

@@ -28,7 +28,7 @@ const TaskMapper = () => {
   const removeTask = async (id) => {
     try {
       const response = await fetch(
-        "https://dkodi-backend.netlify.app/.netlify/functions/api",
+        `https://dkodi-backend.netlify.app/.netlify/functions/api?id=${id}`,
         {
           method: "DELETE",
           headers: {
@@ -39,6 +39,7 @@ const TaskMapper = () => {
 
       if (!response.ok) {
         console.log("Something went wrong while deleting task " + id);
+        console.log(response);
         return;
       }
       const newTask = tasks.filter((removedTask) => removedTask._id !== id);
@@ -58,7 +59,12 @@ const TaskMapper = () => {
           >
             <div className="left">
               <h1 className="task-title text-lg font-bold flex items-center">
-                <button onClick={() => removeTask(data._id)}>
+                <button
+                  onClick={() => {
+                    removeTask(data._id);
+                    console.log(data._id);
+                  }}
+                >
                   <i className="bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer"></i>
                 </button>
                 {data.title}
