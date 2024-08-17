@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Menu from "./Menu.jsx"
+// import Menu from "./Menu.jsx";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const AddTaskPopup = ({
   addTask,
@@ -10,6 +12,12 @@ const AddTaskPopup = ({
 }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+
+  const [selectedPriority, setSelectedPriority] = useState("Priority");
+
+  const handleSelect = (priority) => {
+    setSelectedPriority(priority);
+  };
 
   useEffect(() => {
     if (isEditMode && taskToEdit) {
@@ -34,6 +42,7 @@ const AddTaskPopup = ({
     const task = {
       title,
       desc,
+      priority: selectedPriority,
       _id: taskToEdit?._id,
     };
 
@@ -178,7 +187,68 @@ const AddTaskPopup = ({
             </div>
           </div>
 
-          <Menu />
+          {/* priority Menu */}
+
+          <Menu as="div" className="relative inline-block text-left ms-2">
+            <div>
+              <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-neutral-950 px-3 py-[2px] text-sm text-white ring-1 ring-white ring-opacity-50 cursor-pointer focus:outline-none">
+                {selectedPriority}
+                <ChevronDownIcon
+                  aria-hidden="true"
+                  className="-mr-1 h-5 w-5 text-white"
+                />
+              </MenuButton>
+            </div>
+
+            <MenuItems
+              transition
+              className="absolute right-0 z-10 mt-2 w-[150px] origin-top-right rounded-md bg-neutral-900 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              <div>
+                <MenuItem>
+                  {({ active }) => (
+                    <label
+                      className={`block px-4 py-2 text-sm text-white ${
+                        active ? "bg-red-950/50" : ""
+                      }`}
+                      onClick={() => handleSelect("Priority 1")}
+                    >
+                      <i className="bx bxs-flag me-1 text-red-500 text-md"></i>
+                      Priority 1
+                    </label>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <label
+                      className={`block px-4 py-2 text-sm text-white ${
+                        active ? "bg-red-950/50" : ""
+                      }`}
+                      onClick={() => handleSelect("Priority 2")}
+                    >
+                      <i className="bx bxs-flag me-1 text-yellow-500 text-md"></i>
+                      Priority 2
+                    </label>
+                  )}
+                </MenuItem>
+              </div>
+              <div>
+                <MenuItem>
+                  {({ active }) => (
+                    <label
+                      className={`block px-4 py-2 text-sm text-white ${
+                        active ? "bg-red-950/50" : ""
+                      }`}
+                      onClick={() => handleSelect("Priority 3")}
+                    >
+                      <i className="bx bxs-flag me-1 text-blue-500 text-md"></i>
+                      Priority 3
+                    </label>
+                  )}
+                </MenuItem>
+              </div>
+            </MenuItems>
+          </Menu>
 
           {/* <button
             className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500"

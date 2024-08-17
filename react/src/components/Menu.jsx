@@ -58,8 +58,9 @@ export default function PriorityMenu() {
         <div>
           <MenuItem>
             {({ active }) => (
-              <a
-                href="#"
+              <label
+                value="Priority 3"
+                id="p3"
                 className={`block px-4 py-2 text-sm text-white ${
                   active ? "bg-red-950/50" : ""
                 }`}
@@ -67,7 +68,7 @@ export default function PriorityMenu() {
               >
                 <i className="bx bxs-flag me-1 text-blue-500 text-md"></i>
                 Priority 3
-              </a>
+              </label>
             )}
           </MenuItem>
         </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AddTaskPopup from "./AddTaskPopup.jsx";
 
-
 const TaskMapper = () => {
   const [tasks, setTasks] = useState([]);
   const [savedTasks, setSavedTasks] = useState([]);
@@ -99,14 +98,28 @@ const TaskMapper = () => {
           <div className="left">
             <h1 className="task-title text-lg font-bold flex items-center">
               <button onClick={() => removeTask(savedData._id)}>
-                <i className="bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer"></i>
+                <i
+                  className={`bx bx-check me-3 rounded-full border text-black hover:text-white cursor-pointer ${
+                    savedData.priority === "Priority 1"
+                      ? "bg-red-900/50 text-transparent border-red-500 hover:text-red-500"
+                      : ""
+                  } ${
+                    savedData.priority === "Priority 2"
+                      ? "bg-yellow-900/50 text-transparent border-yellow-500 hover:text-yellow-500"
+                      : ""
+                  } ${
+                    savedData.priority === "Priority 3"
+                      ? "bg-blue-900/50 text-transparent border-blue-500 hover:text-blue-500"
+                      : ""
+                  }`}
+                ></i>
               </button>
               {savedData.title}
             </h1>
             <p className="task-desc text-md ms-8">{savedData.desc}</p>
             <label
               htmlFor="date"
-              className="text-[12px] ms-8 cursor-pointer text-red-300"
+              className="text-[12px] ms-8 cursor-pointer text-gray-500"
             >
               <i className="bx bxs-calendar me-1"></i>
               {savedData.createdAt.slice(5, 7)}/
