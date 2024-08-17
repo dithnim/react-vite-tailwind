@@ -17,40 +17,41 @@ const fbClick = (data) => {
 };
 
 const Login = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const navigateToTodo = () => {
-    Navigate("/todo");
+    navigate("/todo");
   };
 
-  function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId());
-    console.log("Name: " + profile.getName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
-  }
+  const onSuccess = (response) => {
+    console.log("Login Success: ", response.profileObj);
+    navigateToTodo();
+  };
+
+  const onFailure = (response) => {
+    console.log("Login Failed: ", response);
+    alert("Google Login failed. Please try again.");
+  };
 
   function handleData(data) {
     data.preventDefault();
     const formData = new FormData(data.currentTarget);
     const user = Object.fromEntries(formData);
 
-    // alert(user.userName + user.password);
-    if (user.userName == "Dineth" && user.password == 1298) {
+    if (user.userName === "Dineth" && user.password === "1298") {
       navigateToTodo();
     } else {
       alert("You are not invited");
     }
   }
 
-  const onSuccess = (response) => {
-    console.log("Login Success: ", response.profileObj);
-  };
-
-  const onFailure = (response) => {
-    console.log("Login Failed: ", response);
-  };
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId());
+    console.log("Name: " + profile.getName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail()); 
+  }
 
   return (
     <>
@@ -61,15 +62,16 @@ const Login = () => {
           <div className="apis">
             <GoogleLogin
               clientId={clientId}
-              buttonText="Login with google"
-              onSuccess={onSignIn}
+              buttonText="Login with Google"
+              onSuccess={onSuccess}
               onFailure={onFailure}
+              cookiePolicy={"single_host_origin"}
               className="g-btn mb-3"
             />
 
             <FacebookLogin
               appId="388425284240144"
-              autoLoad={true}
+              autoLoad={false}
               fields="name,email,picture"
               onClick={fbClick}
               callback={responseFacebook}
@@ -88,18 +90,16 @@ const Login = () => {
             <div className="content flex flex-col items-center justify-center">
               <input
                 type="text"
-                className="username-input font-semibold flex bg-neutral-900 border-b-2  rounded-md py-1 px-2 text-white m-4 w-full"
+                className="username-input font-semibold flex bg-neutral-900 border-b-2 rounded-md py-1 px-2 text-white m-4 w-full"
                 placeholder="Username"
                 name="userName"
               />
-
               <input
                 type="password"
-                className="password-input font-semibold bg-neutral-900 border-b-2  rounded-md py-1 px-2 text-white w-full"
+                className="password-input font-semibold bg-neutral-900 border-b-2 rounded-md py-1 px-2 text-white w-full"
                 placeholder="Password"
                 name="password"
               />
-
               <button
                 type="submit"
                 className="btn-login font-semibold bg-white mt-10 px-20 py-2 rounded-lg w-full text-black"
