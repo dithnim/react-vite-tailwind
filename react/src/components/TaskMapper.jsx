@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddTaskPopup from "./AddTaskPopup.jsx";
 
+
 const TaskMapper = () => {
   const [tasks, setTasks] = useState([]);
   const [savedTasks, setSavedTasks] = useState([]);
@@ -109,8 +110,8 @@ const TaskMapper = () => {
             >
               <i className="bx bxs-calendar me-1"></i>
               {savedData.createdAt.slice(5, 7)}/
-              {savedData.createdAt.slice(8, 10)} -{}{" "}
-              {savedData.createdAt.slice(11, 16)}
+              {savedData.updatedAt.slice(8, 10)} -{}{" "}
+              {savedData.updatedAt.slice(11, 16)}
             </label>
           </div>
 

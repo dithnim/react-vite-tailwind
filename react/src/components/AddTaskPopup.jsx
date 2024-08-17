@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Menu from "./Menu.jsx"
 
-const AddTaskPopup = ({ addTask, editTask, taskToEdit, isEditMode, togglePopup }) => {
+const AddTaskPopup = ({
+  addTask,
+  editTask,
+  taskToEdit,
+  isEditMode,
+  togglePopup,
+}) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
@@ -171,7 +178,9 @@ const AddTaskPopup = ({ addTask, editTask, taskToEdit, isEditMode, togglePopup }
             </div>
           </div>
 
-          <button
+          <Menu />
+
+          {/* <button
             className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500"
             id="btn-priority"
             onClick={togglePriority}
@@ -223,7 +232,7 @@ const AddTaskPopup = ({ addTask, editTask, taskToEdit, isEditMode, togglePopup }
                 Priority 3
               </a>
             </div>
-          </div>
+          </div> */}
 
           <button
             className="add-task-sub bg-transparent rounded-md px-1 ms-2 border border-neutral-500"

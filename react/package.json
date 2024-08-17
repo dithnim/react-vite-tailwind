@@ -11,6 +11,8 @@
     "net": "netlify deploy --prod"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.2",
+    "@heroicons/react": "^2.1.5",
     "boxicons": "^2.1.4",
     "express": "^4.19.2",
     "jwt-decode": "^4.0.0",
