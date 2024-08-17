@@ -4,6 +4,8 @@ import AddTaskPopup from "./AddTaskPopup.jsx";
 const TaskMapper = () => {
   const [tasks, setTasks] = useState([]);
   const [savedTasks, setSavedTasks] = useState([]);
+  const [taskToEdit, setTaskToEdit] = useState(null);
+  const [isEditMode, setIsEditMode] = useState(false);
 
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -39,6 +41,17 @@ const TaskMapper = () => {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
+  const editTask = (updatedTask) => {
+    const updatedTasks = tasks.map((task) =>
+      task._id === updatedTask._id ? updatedTask : task
+    );
+    setTasks(updatedTasks);
+    setSavedTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    setTaskToEdit(null);
+    setIsEditMode(false);
+  };
+
   const removeTask = async (id) => {
     try {
       const response = await fetch(
@@ -67,6 +80,14 @@ const TaskMapper = () => {
     }
   };
 
+  const handleEditClick = (task) => {
+    setTaskToEdit(task);
+    setIsEditMode(true);
+    document
+      .getElementById("add-task-popup")
+      .classList.add("add-task-popup-open");
+  };
+
   return (
     <div className="flex flex-col w-[100%] mt-6">
       {savedTasks.map((savedData) => (
@@ -88,18 +109,35 @@ const TaskMapper = () => {
             >
               <i className="bx bxs-calendar me-1"></i>
               {savedData.createdAt.slice(5, 7)}/
-              {savedData.createdAt.slice(8, 10)} -
-              {} {savedData.createdAt.slice(11, 16)}
+              {savedData.createdAt.slice(8, 10)} -{}{" "}
+              {savedData.createdAt.slice(11, 16)}
             </label>
           </div>
 
           <div className="right flex">
-            <i className="bx bx-edit text-lg me-1 cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
+            <i
+              className="bx bx-edit text-lg me-1 cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"
+              onClick={() => {
+                handleEditClick(savedData);
+              }}
+            ></i>
             <i className="bx bx-dots-horizontal-rounded text-lg cursor-pointer hover:bg-neutral-800 h-7 py-1 px-1 flex items-center rounded-full"></i>
           </div>
         </div>
       ))}
-      <AddTaskPopup addTask={addTask} />
+      <AddTaskPopup
+        addTask={addTask}
+        editTask={editTask}
+        taskToEdit={taskToEdit}
+        isEditMode={isEditMode}
+        togglePopup={() => {
+          document
+            .getElementById("add-task-popup")
+            .classList.toggle("add-task-popup-open");
+          setTaskToEdit(null);
+          setIsEditMode(false);
+        }}
+      />
     </div>
   );
 };

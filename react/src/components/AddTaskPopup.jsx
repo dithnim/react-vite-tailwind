@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const AddTaskPopup = ({ addTask }) => {
+const AddTaskPopup = ({ addTask, editTask, taskToEdit, isEditMode, togglePopup }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+
+  useEffect(() => {
+    if (isEditMode && taskToEdit) {
+      setTitle(taskToEdit.title);
+      setDesc(taskToEdit.desc);
+    } else {
+      setTitle("");
+      setDesc("");
+    }
+  }, [taskToEdit, isEditMode]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -11,44 +21,59 @@ const AddTaskPopup = ({ addTask }) => {
     setDesc(e.target.value);
   };
 
-  const handleFromSubmit = async (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const newTask = {
+    const task = {
       title,
       desc,
+      _id: taskToEdit?._id,
     };
 
     try {
-      const response = await fetch(
-        "https://dkodi-backend.netlify.app/.netlify/functions/api",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newTask),
-        }
-      );
+      if (isEditMode) {
+        const response = await fetch(
+          `https://dkodi-backend.netlify.app/.netlify/functions/api?id=${task._id}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(task),
+          }
+        );
 
-      const data = await response.json();
-      if (response.ok) {
-        addTask(data);
-        toggleAddTask();
-        setTitle("");
-        setDesc("");
+        if (response.ok) {
+          const data = await response.json();
+          editTask(data);
+        } else {
+          console.error("Failed to update task");
+        }
       } else {
-        console.error("Failed to create task:", data.message);
+        const response = await fetch(
+          "https://dkodi-backend.netlify.app/.netlify/functions/api",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(task),
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          addTask(data);
+        } else {
+          console.error("Failed to create task");
+        }
       }
+      togglePopup();
+      setTitle("");
+      setDesc("");
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const toggleAddTask = () => {
-    document
-      .getElementById("add-task-popup")
-      .classList.toggle("add-task-popup-open");
   };
 
   const togglePriority = () => {
@@ -66,7 +91,7 @@ const AddTaskPopup = ({ addTask }) => {
       className="add-task-popup bg-neutral-950 w-[100%] rounded-2xl p-2 px-4  flex flex-col"
       id="add-task-popup"
     >
-      <form onSubmit={handleFromSubmit}>
+      <form>
         <input
           type="text"
           placeholder="Task name"
@@ -219,15 +244,16 @@ const AddTaskPopup = ({ addTask }) => {
             <button
               type="reset"
               className="bg-white text-black font-semibold px-2 rounded-md me-2"
-              onClick={toggleAddTask}
+              onClick={togglePopup}
             >
               Cancel
             </button>
             <button
               type="submit"
               className="bg-red-500 font-semibold px-2 rounded-md"
+              onClick={handleFormSubmit}
             >
-              Add task
+              {isEditMode ? "Update Task" : "Add Task"}
             </button>
           </div>
         </div>
