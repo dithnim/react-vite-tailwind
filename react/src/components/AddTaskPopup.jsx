@@ -1,8 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import TaskMapper from "./TaskMapper";
+import React, { useState } from "react";
 
-const AddTaskPopup = (t,d) => {
+const AddTaskPopup = ({ addTask }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
@@ -22,16 +20,20 @@ const AddTaskPopup = (t,d) => {
     };
 
     try {
-      const response = await fetch("https://dkodi-backend.netlify.app/.netlify/functions/api", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newTask),
-      });
+      const response = await fetch(
+        "https://dkodi-backend.netlify.app/.netlify/functions/api",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newTask),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {
+        addTask(data);
         toggleAddTask();
         setTitle("");
         setDesc("");
