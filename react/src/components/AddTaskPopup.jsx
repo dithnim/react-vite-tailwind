@@ -13,10 +13,15 @@ const AddTaskPopup = ({
   const [desc, setDesc] = useState("");
 
   const [selectedPriority, setSelectedPriority] = useState("Priority");
+  const [selectedDate , setSelectedDate] = useState("Date");
 
-  const handleSelect = (priority) => {
+  const handleSelectPriority = (priority) => {
     setSelectedPriority(priority);
   };
+
+  const handleSelectDate = (date) => {
+    setSelectedDate(date);
+  }
 
   useEffect(() => {
     if (isEditMode && taskToEdit) {
@@ -42,6 +47,7 @@ const AddTaskPopup = ({
       title,
       desc,
       priority: selectedPriority,
+      date : selectedDate,
       _id: taskToEdit?._id,
     };
 
@@ -91,22 +97,12 @@ const AddTaskPopup = ({
     }
   };
 
-  const togglePriority = () => {
-    document
-      .getElementById("priority-menu")
-      .classList.toggle("priority-popup-close");
-  };
-
-  const toggleDateSelect = () => {
-    document.getElementById("date-popup").classList.toggle("date-popup-open");
-  };
-
   return (
     <div
       className="add-task-popup bg-neutral-950 w-[100%] rounded-2xl p-2 px-4  flex flex-col"
       id="add-task-popup"
     >
-      <form>
+      <div>
         <input
           type="text"
           placeholder="Task name"
@@ -122,7 +118,84 @@ const AddTaskPopup = ({
           className="bg-transparent outline-0 font-semibold text-sm w-full mt-2"
         />
         <div className="add-task-btns mt-2">
-          <button
+          {/* Date selection menu */}
+          <Menu as="div" className="relative inline-block text-left ms-2">
+            <div>
+              <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-neutral-950 px-3 py-[2px] text-sm text-white ring-1 ring-white ring-opacity-50 cursor-pointer focus:outline-none">
+                {selectedDate}
+                <ChevronDownIcon
+                  aria-hidden="true"
+                  className="-mr-1 h-5 w-5 text-white"
+                />
+              </MenuButton>
+            </div>
+
+            <MenuItems
+              transition
+              className="absolute right-0 z-10 mt-2 w-[150px] origin-top-right rounded-md bg-neutral-900 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              <div>
+                <MenuItem>
+                  {({ active }) => (
+                    <label
+                      className={`flex items-center px-4 py-2 text-sm text-white ${
+                        active ? "bg-red-950/50" : ""
+                      }`}
+                      onClick={() => handleSelectDate("Today")}
+                    >
+                      <i className="bx bxl-react text-lg me-1 text-green-500"></i>
+                      Today
+                    </label>
+                  )}
+                </MenuItem>
+                <MenuItem>
+                  {({ active }) => (
+                    <label
+                      className={`flex px-4 py-2 items-center text-sm text-white ${
+                        active ? "bg-red-950/50" : ""
+                      }`}
+                      onClick={() => handleSelectDate("Tomorrow")}
+                    >
+                      <i className="bx bx-sun text-lg me-1 text-yellow-500"></i>
+                      Tomorrow
+                    </label>
+                  )}
+                </MenuItem>
+              </div>
+              <div>
+                <MenuItem>
+                  {({ active }) => (
+                    <label
+                      className={`flex items-center px-4 py-2 text-sm text-white ${
+                        active ? "bg-red-950/50" : ""
+                      }`}
+                      onClick={() => handleSelectDate("This weekend")}
+                    >
+                      <i className="bx bx-game text-lg me-1 text-blue-500"></i>
+                      This weekend
+                    </label>
+                  )}
+                </MenuItem>
+              </div>
+              <div>
+                <MenuItem>
+                  {({ active }) => (
+                    <label
+                      className={`flex items-center px-4 py-2 text-sm text-white ${
+                        active ? "bg-red-950/50" : ""
+                      }`}
+                      onClick={() => handleSelectDate("Next week")}
+                    >
+                      <i className="bx bx-meteor text-lg me-1 text-purple-500"></i>
+                      Next week
+                    </label>
+                  )}
+                </MenuItem>
+              </div>
+            </MenuItems>
+          </Menu>
+
+          {/* <button
             className="add-task-sub bg-transparent rounded-md px-2 border border-neutral-500"
             onClick={toggleDateSelect}
           >
@@ -130,9 +203,9 @@ const AddTaskPopup = ({
             <label htmlFor="cal" className="ms-1 text-sm cursor-pointer">
               Today
             </label>
-          </button>
+          </button> */}
 
-          <div
+          {/* <div
             className="absolute date-popup-close z-10 mt-2 w-[150px] rounded-md bg-neutral-900 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none"
             role="menu"
             aria-orientation="vertical"
@@ -184,7 +257,7 @@ const AddTaskPopup = ({
                 Next week
               </a>
             </div>
-          </div>
+          </div> */}
 
           {/* priority Menu */}
 
@@ -210,7 +283,7 @@ const AddTaskPopup = ({
                       className={`block px-4 py-2 text-sm text-white ${
                         active ? "bg-red-950/50" : ""
                       }`}
-                      onClick={() => handleSelect("Priority 1")}
+                      onClick={() => handleSelectPriority("Priority 1")}
                     >
                       <i className="bx bxs-flag me-1 text-red-500 text-md"></i>
                       Priority 1
@@ -223,7 +296,7 @@ const AddTaskPopup = ({
                       className={`block px-4 py-2 text-sm text-white ${
                         active ? "bg-red-950/50" : ""
                       }`}
-                      onClick={() => handleSelect("Priority 2")}
+                      onClick={() => handleSelectPriority("Priority 2")}
                     >
                       <i className="bx bxs-flag me-1 text-yellow-500 text-md"></i>
                       Priority 2
@@ -238,7 +311,7 @@ const AddTaskPopup = ({
                       className={`block px-4 py-2 text-sm text-white ${
                         active ? "bg-red-950/50" : ""
                       }`}
-                      onClick={() => handleSelect("Priority 3")}
+                      onClick={() => handleSelectPriority("Priority 3")}
                     >
                       <i className="bx bxs-flag me-1 text-blue-500 text-md"></i>
                       Priority 3
@@ -335,7 +408,7 @@ const AddTaskPopup = ({
             </button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

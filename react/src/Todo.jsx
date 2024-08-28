@@ -38,7 +38,7 @@ const Todo = () => {
   };
 
   return (
-    <div className="todo-body flex w-screen" id="todo-body">
+    <div className="todo-body flex w-screen h-[120vh]" id="todo-body">
       {/* <Sidebar /> */}
 
       <div
