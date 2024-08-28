@@ -1,8 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar.jsx";
 import "./login.css";
-import GoogleLogin from "react-google-login";
-import FacebookLogin from "react-facebook-login";
 import { useNavigate } from "react-router-dom";
 
 const clientId =
@@ -50,7 +48,7 @@ const Login = () => {
     console.log("ID: " + profile.getId());
     console.log("Name: " + profile.getName());
     console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail()); 
+    console.log("Email: " + profile.getEmail());
   }
 
   return (

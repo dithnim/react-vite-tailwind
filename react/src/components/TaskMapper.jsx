@@ -14,7 +14,6 @@ const TaskMapper = () => {
 
     const fetchData = async () => {
       try {
-        console.log("api call");
         const response = await fetch(
           "https://dkodi-backend.netlify.app/.netlify/functions/api"
         );
