@@ -245,7 +245,7 @@ const Todo = () => {
         id="todo-body"
       >
         <section className="task-section flex w-[60%] items-start justify-center flex-col">
-          <h1 className="text-4xl font-semibold mb-3">Today</h1>
+          <h1 className="text-3xl font-semibold mb-3">Today</h1>
           <label htmlFor="task-count" style={{ display: "none" }}>
             <i className="bx bx-check-circle"></i>
             <label htmlFor="task">{" 0 "}tasks</label>
@@ -256,6 +256,8 @@ const Todo = () => {
           </button>
           <div className="hr mt-2 h-[1px] bg-neutral-900 w-[100%]"></div>
           <TaskMapper />
+          <h1 className="text-3xl mt-5 font-semibold mb-3">Tomorrow</h1>
+          <div className="hr mt-2 h-[1px] bg-neutral-900 w-[100%]"></div>
         </section>
 
         {/* Style for no task window */}

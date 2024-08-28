@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddTaskPopup from "./AddTaskPopup.jsx";
 
-const TaskMapper = () => {
+const TaskMapper = ({date}) => {
   const [tasks, setTasks] = useState([]);
   const [savedTasks, setSavedTasks] = useState([]);
   const [taskToEdit, setTaskToEdit] = useState(null);
@@ -86,6 +86,7 @@ const TaskMapper = () => {
       .getElementById("add-task-popup")
       .classList.add("add-task-popup-open");
   };
+
 
   return (
     <div className="flex flex-col w-[100%] mt-6">
